@@ -1,4 +1,5 @@
 import React from 'react';
+import PostItem from './post_item';
 
 class Posts extends React.Component {
   render() {
