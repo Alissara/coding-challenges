@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Posts from './posts';
+import Comments from './comments';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,17 +22,25 @@ class App extends React.Component {
   fetchData() {
     axios.get(`https://www.reddit.com/user/${this.state.username}/submitted.json`)
       .then(res => {
-        const posts = res.data.children.map(obj => obj.data);
+        const posts = res.data.data.children.map(obj => obj.data);
+        posts.sort((a, b) => {
+          return b.score - a.score;
+        });
         this.setState({ posts });
       });
     axios.get(`https://www.reddit.com/user/${this.state.username}/comments.json`)
       .then(res => {
-        const comments = res.data.children.map(obj => obj.data);
+        const comments = res.data.data.children.map(obj => obj.data);
+        comments.sort((a, b) => {
+          return b.score - a.score;
+        });
         this.setState({ comments });
       });
   }
 
   render() {
+    const { posts, comments } = this.state;
+
     return (
       <div>
         <h1>Recent Reddit</h1>
@@ -42,6 +52,8 @@ class App extends React.Component {
           Enter
         </button>
 
+        <Posts posts={posts} />
+        <Comments comments={comments}/>
 
       </div>
     );
