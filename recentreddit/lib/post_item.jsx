@@ -6,7 +6,7 @@ class PostItem extends React.Component {
 
     return (
       <li>
-        {score}: {title}
+        <p>{score}: <a href={`${url}`}>{title}</a></p>
       </li>
     );
   }

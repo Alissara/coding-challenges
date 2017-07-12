@@ -1,0 +1,62 @@
+html, body, h1, section, img, p, div {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+
+  font-family: arial;
+
+  background: transparent;
+}
+
+h1 {
+  font-size: 20px;
+  padding: 10px;
+}
+
+input {
+  margin: 10px;
+}
+
+
+
+h3 {
+  font-size: 14px;
+}
+
+section {
+  display: flex;
+}
+
+.comment-list,
+.post-list {
+  margin: 5px;
+}
+
+.post-list {
+  flex: 1;
+}
+
+.comment-list {
+  flex: 2
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  border: 1px solid black;
+  margin: 10px 0px;
+  padding: 5px;
+  border-radius: 1px;
+  font-size: 12px;
+
+  box-shadow: 2px 2px 1px #888888
+}dogz9

@@ -52,8 +52,10 @@ class App extends React.Component {
           Enter
         </button>
 
-        <Posts posts={posts} />
-        <Comments comments={comments}/>
+        <section>
+          <Posts posts={posts} />
+          <Comments comments={comments}/>
+        </section>
 
       </div>
     );

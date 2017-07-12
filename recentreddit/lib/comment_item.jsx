@@ -6,7 +6,8 @@ class CommentItem extends React.Component {
 
     return (
       <li>
-        {score}: {body}
+        <a href={`${link_permalink}`}>{link_title}</a>
+        <p>{score}: {body}</p>
       </li>
     );
   }
